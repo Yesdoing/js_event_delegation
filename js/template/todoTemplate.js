@@ -1,4 +1,4 @@
-export default TodoTemplate = (text) => {
+export const todoTemplate = ({todo}) => {
     return `
         <div class="todo">
             <div class="todo-text">
@@ -11,4 +11,4 @@ export default TodoTemplate = (text) => {
             </div>
         </div>
     `;
-}
+};

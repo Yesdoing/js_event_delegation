@@ -1,5 +1,5 @@
 export const todo = [
     {
-        "todo": "hello World!"
+        todo: "hello World!"
     }
 ];
