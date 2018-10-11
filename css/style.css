@@ -42,3 +42,9 @@
     background-color: green;
     
 }
+
+#parent-list {
+    border: 1px solid red;
+    float: left;
+    clear: both;
+}
