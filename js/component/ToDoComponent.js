@@ -7,11 +7,11 @@ export default class ToDoComponent {
     }
 
     onSave() {
-        const $input = document.querySelector('.addTodo input');
+        const $input = document.querySelector('.addTodo>input');
         const $todoList = document.querySelector('.todo-list');
 
         $todoList.innerHTML = '';
-        todo.push({todo: $input.text});
+        todo.push({todo: $input.value });
         todo.map(x => {
             $todoList.innerHTML += todoTemplate(x);
         });
@@ -30,14 +30,17 @@ export default class ToDoComponent {
     }
 
     onEmit() {
-        this._elem.addEventListener('click', function(e) {
-            if(e.target && e.target.dataset.action === "onSave") {
+        console.log('onEmit');
+        this._elem.addEventListener('click', (e) => {
+            const elemTarget = e.target;
+            if(elemTarget && elemTarget.dataset.action === "onSave") {
+                console.log('clicked');
                 this.onSave();
-            } else if ( e.target && e.target.dataset.action === "onDone" ) {
+            } else if ( elemTarget && elemTarget.dataset.action === "onDone" ) {
                 this.onDone();
-            } else if ( e.target && e.target.dataset.action === "onRemove" ) {
+            } else if ( elemTarget && elemTarget.dataset.action === "onRemove" ) {
                 this.onRemove();
-            } else if ( e.target && e.target.dataset.action === "onUpdate" ) {
+            } else if ( elemTarget && elemTarget.dataset.action === "onUpdate" ) {
                 this.onUpdate();
             }
         });
