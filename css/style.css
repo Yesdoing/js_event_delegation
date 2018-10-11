@@ -1,0 +1,44 @@
+.container {
+    margin-left: 300px;
+}
+
+.addTodo {
+    width: 500px;
+    margin-bottom: 10px;
+}
+
+.addTodo > input {
+    width: 400px;
+    box-sizing: border-box;
+}
+
+.addTodo > button {
+    width: 90px;
+}
+
+.todo {
+    display: flex;
+    width: 500px;
+    border: 1px solid gray;
+    justify-content: space-between;
+}
+
+.todo-text {
+    text-align: center;
+    flex: 1;
+}
+
+.todo-state {
+    display: flex;
+}
+
+.todo-button {
+    padding-right: 10px; 
+    border-left: 1px solid gray;
+    padding-left: 10px;
+}
+
+.todo-button:hover {
+    background-color: green;
+    
+}
