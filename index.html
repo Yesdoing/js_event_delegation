@@ -21,7 +21,7 @@
     <div class="container">
         <div class="addTodo">
             <input type="text">
-            <button type="todo-button">추가</button>
+            <button type="button" class="todo-button" data-action="onSave">추가</button>
         </div>
         <div class="todo-list">
             <div class="todo">
@@ -29,15 +29,15 @@
                     <span>Hello World!</span>
                 </div>
                 <div class="todo-state">
-                    <div class="todo-button" data-action="done">done</div>
-                    <div class="todo-button" data-action="remove">remove</div>
-                    <div class="todo-button" data-action="update">update</div>
+                    <div class="todo-button" data-action="onDone">done</div>
+                    <div class="todo-button" data-action="onRemove">remove</div>
+                    <div class="todo-button" data-action="onUpdate">update</div>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <script src="./js/app.js"></script>
+    <script src="./js/app.js" type="module"></script>
 </body>
 </html>
