@@ -1,5 +1,5 @@
 import ToDoComponent from './component/ToDoComponent.js';
-
+import FormComponent from './component/FormComponent.js';
 document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector("#parent-list").addEventListener("click", function (e) {
@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const $container = document.querySelector('.container');
-    const copo = new ToDoComponent($container);
-    copo.onEmit();
+    const $todoList = document.querySelector('.todo-list');
+    const list = new ToDoComponent($todoList);
+    const form = new FormComponent(document.querySelector('.todo-form'));
+    form.onAdd(list.onSave);
+    list.onEmit();
 });

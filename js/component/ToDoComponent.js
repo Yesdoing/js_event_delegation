@@ -6,14 +6,13 @@ export default class ToDoComponent {
         this._elem = elem;
     }
 
-    onSave() {
-        const $input = document.querySelector('.addTodo>input');
+    onSave(text) {
         const $todoList = document.querySelector('.todo-list');
 
         $todoList.innerHTML = '';
-        todo.push({todo: $input.value });
+        todo.push({todo: text });
         todo.map(x => {
-            $todoList.innerHTML += todoTemplate(x);
+            $todoList.insertAdjacentHTML('afterbegin', todoTemplate(x));
         });
     }
 
@@ -33,10 +32,7 @@ export default class ToDoComponent {
         console.log('onEmit');
         this._elem.addEventListener('click', (e) => {
             const elemTarget = e.target;
-            if(elemTarget && elemTarget.dataset.action === "onSave") {
-                console.log('clicked');
-                this.onSave();
-            } else if ( elemTarget && elemTarget.dataset.action === "onDone" ) {
+            if ( elemTarget && elemTarget.dataset.action === "onDone" ) {
                 this.onDone();
             } else if ( elemTarget && elemTarget.dataset.action === "onRemove" ) {
                 this.onRemove();
